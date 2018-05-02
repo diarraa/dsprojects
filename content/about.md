@@ -1,6 +1,13 @@
 ---
-title: "About"
-date: "2016-05-05T21:48:51-07:00"
+title: About
+author: Fousseynou Bah
+date: '2018-05-02'
+tags:
+  - About
+  - Markdown
+  - Me
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+My name if Fousseynou.
+I'm new at blogging.
+I hope what I'll write here will be useful to someone, someday, somehow.
