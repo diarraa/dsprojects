@@ -6,17 +6,26 @@
     <description>Recent content in Mali on A Hugo website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 07 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mali/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Probably over my head</title>
-      <link>/2018/05/03/probably-over-my-head/</link>
-      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
+      <title>Security incidents in Mali: the data</title>
+      <link>/2018/05/07/security-threats-in-mali-the-data/</link>
+      <pubDate>Mon, 07 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/05/03/probably-over-my-head/</guid>
+      <guid>/2018/05/07/security-threats-in-mali-the-data/</guid>
+      <description>My first data science projectI first started to work on the list from the Malilink website during October 2017. I was stunned that I haven’t heard about it before (that goes to show that don’t read all my emails; I joined the platform few years earlier and I was on the mailing list). My first approach was to copy from the website and paste into an Excel spreadsheet (at that time, I hadn’t learned about the miracles of web scraping packages - I’m almost ashamed to admit it).</description>
+    </item>
+    
+    <item>
+      <title>Probably over my head</title>
+      <link>/2018/05/04/probably-over-my-head/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/05/04/probably-over-my-head/</guid>
       <description>Last year, I made a new friend. She (yes, it’s a “she”) introduced me to Kaggle. I had no idea what that was. She was amused, and I slightly embarrassed. I, who think of myself as a worldly man, modern, aware of what happening here and there (yes, I get sometimes caught up a delusion of grandeur in my head), had no clue what Kaggle was. She proposed that we train together to enter a competition.</description>
     </item>
     

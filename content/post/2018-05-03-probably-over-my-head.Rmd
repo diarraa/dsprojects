@@ -46,8 +46,8 @@ And, that's ok.
 We still have the Sound of Silence (don't say anything, I'm more shocked than you).
 
 One advice I took away from most of the websites I visited, videos I watched on Youtube, and documents I read was the need to practice, and, preferably, on projects that hold a particular interest for the one learning.
-Therefore, I started to look for a topic what would speak to my interest, not just data to practice.
-And I found something interesting, challenging, and, possibly, beyond my reach.
+Therefore, I started to look for a topic what would speak to my interest, not just data to practice on.
+And I found something interesting, challenging, and, possibly, over my head.
 It was the security threats in my home country, Mali.
 I found out that a website, [Malilink](http://malilink.net/attaques-terroriste-au-mali/), keeps a list on the incidents (terrorist attacks, clashes between communities, etc.) that have occurred since 2015.
 I knew about the website, but not that particular page.
@@ -61,13 +61,13 @@ I didn't want to contribute to that with my uneducated opinions.
 That's the truth: I don't know much about geopolitics or terrorism.
 But I knew, that I could do something with the information I found and I didn't want to keep it to myself.
 If the folks behind the website had done the same, I wouldn't have had a project in the first place.
-So, if I was going to use any data from the website, I had the moral obligation to share the results.
+I also told myself that if I was going to use any data from the website, I had the moral obligation to share the results.
 I cannot claim that the list on the website is accurate, reliable or exhaustive, but there is one thing that deserves credit: the contributors went public with their information, giving anybody the chance to challenge it.
 And that's one reason why I took a chance on it.
 
 Another reason why I kept my sight on this topic was the technical challenge the data presented.
 They were not organized in the sense of readiness for analysis.
-They were not tidy.
+They were not "tidy".
 So, they offered me the opportunity to train in data wrangling.
 And I was optimistic about my chances in that battle (Happy Potter had his wand and the smarts of Hermione against Voldomort, I had the packages of tidyverse against my "list").
 
