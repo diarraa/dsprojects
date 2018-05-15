@@ -1,0 +1,12 @@
+name: ssm2
+title: ssm2
+username:
+account: fousseynoubah
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 343322
+bundleId: 1375203
+url: https://fousseynoubah.shinyapps.io/ssm2/
+when: 1526401482.84243
+asMultiple: FALSE
+asStatic: FALSE
