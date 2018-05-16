@@ -1,7 +1,7 @@
 ---
-title: 'Security incidents in Mali: the incidents'
+title: 'Security incidents in Mali: diving in with visualization'
 author: Fousseynou Bah
-date: '2018-05-15'
+date: '2018-05-16'
 categories:
   - data
   - R
@@ -23,7 +23,6 @@ Sys.setenv(TZ="Africa/Bamako")
 ########################################/// PACKAGES ///
 ##########################################################################
 library("tidyverse")
-#library("ggvis")
 library("lubridate")
 library("plotly")
 #library("readxl")
@@ -49,7 +48,7 @@ load(url("https://github.com/fousseynoubah/ssm/blob/master/ssm_data.RData?raw=tr
 ```
 
 
-# Intro
+# No shortcut to learning
 
 When I started writing this post, I was fairly confident it would be quick.
 After all, I had all the materials I needed, a bunch of scripts I had spent months writing.
@@ -70,7 +69,6 @@ So, I had no reason to think beyond ggplot2.
 Then, the idea for this blog came, and I realized that interactive visualization would be a better way to go.
 I had to chose a package.
 Three options were available to me: ggvis, plotly, shiny.
-Actually, these three would not be mutually exclusive, making the strategy even harder.
 
 I had a strong leaning towards ggvis, on which I had already taken few courses online.
 I loved it.
@@ -96,146 +94,90 @@ One detail made me reconsider my position: ggplotly.
 Realizing that I could create an object with ggplot2, pass it to ggplotly, and have a plotly object was - to put it like teenagers - dope (please don't tell me I'm outdated on that one already).
 But, then, I reached the limits of the function.
 I was not getting everything.
-Some details were being lost (like the subtitles and the captions, for instance).
+Some details were being lost, like the subtitles or the captions.
 
 In the end, I found myself in a pickle.
 With ggplot2, I was going to miss out on the joys of interactive visualization.
 With ggplot2 + plotly, I was going to lose some of what makes ggplot2 great.
 And, with shiny + one of either, I was going to have to learn a lot.
-I spent days weighing my options, going back and forth between chunks of code, hoping I would find a way around the issue.
+I spent days weighing my options, going back and forth between chunks of codes, hoping I would find a way around the issue.
 I didn't.
-But I knew one thing, though.
-ggvis was not an option.
+But I knew one thing for sure.
+ggvis was not a viable an option.
 Unlike plotly or shiny, it was not being being maintained and developed.
 For all I know, it could be in its grave (I dread that fate so much that I shiver at the thought of it), or taking a long nap before a comeback (like a Mommy...well a good one...like those released in the early 2000's...not the one we recently got from Tom Cruise).
-I ended up spending long hours watching Youtube videos (which is now the place I go to learn rather than to watch latest music videos like I used to few years ago...looks like I'm growing up) and surfing websites with tutorials on plotly and shiny in R.
+I ended up spending long hours watching Youtube videos (which is now the place I go to learn rather than to find the latest music videos, like I used to few years ago...I miss the good old times) and surfing websites with tutorials on plotly and shiny in R.
 I still am not there yet, the place where I feel the confidence that only mastery can bring.
 But I understood few tricks.
 Mostly, I only set out *translate* my old ggplot2 graphs into interactive shiny-powered plotly ones.
 
-What I took (or I'm still taking) away from the experience behind this post is this: there's not shortcut to learning and nothing is truly ever lost (waouw, I can be profound sometimes. Ok, mark that, and write it on my grave).
-This project probably brought me closer to all the tools aforementioned more than any previous tutorials I took online.
-Probably because, I'm less concerned with reproducing what I see from the instructor that I am making sense of the data I have through visualization.
+What I took away from the experience behind this post is this: there's no shortcut to learning, and nothing is truly ever lost (hum...that sounds profound... Ok, mark that, and write it on my grave when I'm gone).
+This project probably brought me closer to all the tools aforementioned than any previous tutorials I took online.
+Probably because I was less concerned with reproducing what I had in front of my eyes than I was trying to make sense of the data I had through visualization.
 
 This post was initially meant to be a simple rework of scripts I had previously written.
-It ended up being a shiny/plotly-centered episode in this incidents-focused season (if you were/are a Lost fan, you'd get it).
+It ended up being a shiny/plotly-centered episode in an incidents-focused season (if you are/were a Lost fan, you'd get it).
+I learned how to:
 
-# The incidents
+- make a shiny app with plotly (ggplot2, distance makes heart grow fonder...I'll come back to you);
+
+- publish a shiny app: I a got myself a shiny account (for free... well, at least for now) and almost lost my mind in the deployment process (it kept failing over and over again) ; and
+
+- embed a shiny app in a blog post.
+
+I'm pretty sure I've grown few gray hair during these last few days, but it was worth it.
+
+
+# Visualization
+
+As I got more and more comfortable with the tools, I realized I didn't want as many graphs as I had on the slides I previously made.
+And with interactive visualization tools such as shiny and plotly, I didn't have to.
+And with the limit set by my shiny account, I couldn't anyway (yeah...I'm still going for the free stuff).
+Basically, I had all the incentives in the world to be as creative as I could.
+Considering the constraints I had to work with, I needed to come up with visualizations that would lend themselves to multiple requests from the user, that would be able to communicate different information without having their nature altered.
+So far, I've made three apps that I like enough.
+
+## Exploring the attributes of the incidents
+
+Depending on the transformation one would choose, the [original list](http://malilink.net/attaques-terroriste-au-mali/) could be either a panel data or a time series.
+To make things simple, I chose the latter - opting for a monthly agregation -, and to go with it a barplot.
+That seemed a simple way to explore the attributes of the incidents.
+For the app, I chose four variables:
+
+- number: a simple monthly count of the incidents;
+
+- location: as indicated in my previous post, I distinguish between the incidents that took place at know locations - meaning known coordinates - and those for which such details are not provided. Only the places between which they occured are known. That creates a dichotomy, points versus lines, that I found useful to represent;
+
+- type: this variable indicates whether an incident was an attack from an armed organization (terrorist or not), a clash between communities (ethnic groups), or of different nature (all the rest);
+
+- deadly nature: that variable shows whether there's been a loss of life or not, regardless of the side which suffered that loss. I felt that taking into account the identity would be going beyond a simple observation, for which I don't think I'm well equiped.
+
 
 <iframe width="700" height="600" scrolling="no" frameborder="no"  src="https://fousseynoubah.shinyapps.io/ssm1/"> </iframe>
 
 
-<iframe width="700" height="600" scrolling="no" frameborder="no"  src="https://fousseynoubah.shinyapps.io/ssm2/"> </iframe>
+## Looking into the major variables throughout time
 
+After exploring many other visualizations, I decided to focus - at least, for this phase - on three variables:
 
+- the incidents;
 
+- the dead; and
 
-```{r incidents_apercu_gph1, eval=FALSE, echo=FALSE, fig.align='center', out.width="90%"}
+- the injured.
 
-### Graph: Number of incidents, per month
-incidents %>%
-  mutate(n = 1) %>%
-  group_by(mois, annee) %>%
-  summarise(incidents = sum(n), victimes = sum(nbr_victimes), morts = sum(nbr_morts)) %>%
-  mutate(jour = paste0(0, 1)) %>%
-  mutate(date = paste(annee, mois, jour, sep = "-")) %>%
-  mutate(date = ymd(date)) %>%
-  select(annee, mois, jour, date, incidents, victimes, morts) %>%
-  plot_ly(x = ~date, y = ~incidents, 
-          type = "bar",
-          marker = list(color = "darkred")) %>% 
-  layout(title = "Number of incidents, per month",
-         yaxis = list(title = "Incidents"),
-         xaxis = list(title = "Date"))
+I though it would be interesting to look at the cumulative counts:
 
-```
+- since the beginning of the series, which is 2015 (it would've been great to have a series that starts in 2012);
+- per year.
 
+The result is shown below:
 
+<iframe width="700" height="600" scrolling="no" frameborder="no"  src="https://fousseynoubah.shinyapps.io/ssm3/"> </iframe>
 
+## Adding a spatial dimension
 
+Using the same variables, I added an interactive map to represent the yearly count for each in.
 
-
-```{r incidents_apercu_gph2, eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', out.width="90%"}
-
-### Graphique: nombre d'incidents par par mois, cumul
-#incidents %>%
-#  mutate(mois = factor(mois,
-#                       levels = c(1:12),
-#                       labels = c("Jan", "Feb", "Mar", "Apr", 
-#                                  "May", "Jun", "Jul", "Aug", 
-#                                  "Sep", "Oct", "Nov", "Dec"),
-#                       ordered = TRUE
-#                       )) %>% 
-#  group_by(annee, mois) %>% 
-#  summarise(incidents = n()) %>% 
-#  mutate(cumsum = cumsum(incidents)) %>% 
-#  select(-incidents) %>% 
-#  spread(key = annee, value = cumsum) %>% 
-#  plot_ly(x =~mois) %>% 
-#  add_lines(y =~`2015`, name = '2015', mode = 'lines') %>% 
-#  add_lines(y =~`2016`, name = '2016', mode = 'lines') %>% 
-#  add_lines(y =~`2017`, name = '2017', mode = 'lines') %>% 
-#  add_lines(y =~`2018`, name = '2018', mode = 'lines') %>% 
-#  layout(title = "Cumulated number of incidents, per year",
-#         yaxis = list(title = "Incidents"),
-#         xaxis = list(title = "Month"),
-#         annotations = list(x = 0.75, y = -0.15, 
-#                            text = "<b>Source:</b> Data from Malilink website", 
-#                   showarrow = F, xref='paper', yref='paper', 
-#                   xanchor='left', yanchor='right', # xshift=0, yshift=0,
-#                   font=list(size=10))# , margin = list(b = 50)
-#         )
-
-incidents %>%
-  select(year = annee, month = mois, day = jour, date) %>% 
-  mutate(week = week(date)) %>%
-  group_by(year, week) %>% 
-  summarise(incidents = n()) %>% 
-  mutate(cumsum = cumsum(incidents)) %>% 
-  plot_ly(x =~ week, y =~cumsum, color =~factor(year), mode = "lines") %>% 
-  layout(title = "Cumulated number of incidents, per year",
-       yaxis = list(title = "Incidents"),
-         xaxis = list(title = "Week"),
-         annotations = list(x = 0.75, y = -0.15, 
-                            text = "<b>Source:</b> Data from Malilink website", 
-                   showarrow = F, xref='paper', yref='paper', 
-                   xanchor='left', yanchor='right', # xshift=0, yshift=0,
-                   font=list(size=10))# , margin = list(b = 50)
-         )
-
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<iframe width="700" height="600" scrolling="no" frameborder="no"  src="https://fousseynoubah.shinyapps.io/ssm4/"> </iframe>
 

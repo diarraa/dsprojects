@@ -23,7 +23,8 @@ ui <- fluidPage(
                   label = "Variable",
                   choices = c("Total" = "total",
                               "Location" = "location" ,
-                              "Type" = "type"),
+                              "Type" = "type",
+                              "Deadly" = "deadly"),
                   selected = "total")
       ),
 
@@ -44,18 +45,21 @@ server <- function(input, output) {
                                   !is.na(point) & !is.na(depart) & !is.na(arrivee) ~ "ND"),
              location = ifelse(is.na(location), "ND", location),
              type = ifelse(!(type_incident == "Attaque" | type_incident == "Affrontement"), "Autre", type_incident),
-             type = ifelse(is.na(type), "Autre", type) ) %>% 
-      group_by(year = annee, month = mois, total, location, type) %>%
+             type = ifelse(is.na(type), "Autre", type),
+             deadly = ifelse(!is.na(nbr_morts) & nbr_morts > 0, 1, 0),
+             deadly = factor(deadly,
+                             levels = c(0, 1), 
+                             labels = c("Not deadly", "Deadly"),
+                             ordered = TRUE) ) %>% 
+      group_by(year = annee, month = mois, total, location, type, deadly) %>%
       summarise(incidents = n()) %>% 
       mutate(date = as.Date(paste(year, month, "01", sep = "-"))) %>%
       ungroup() %>% 
       select(-c(year, month)) %>% 
-#      group_by(date) %>% 
-#      mutate(total = sum(incidents)) %>% 
       gather(key = variable, value = category, -date, -incidents) %>% 
       mutate(category = factor(category,
-                               levels = c("Total", "Point", "Ligne", "ND", "Attaque", "Affrontement", "Autre"), # 
-                               labels = c("Total", "Point", "Line", "ND", "Attack", "Clash", "Other"), # 
+                               levels = c("Total", "Point", "Ligne", "ND", "Attaque", "Affrontement", "Autre", "Not deadly", "Deadly"), # 
+                               labels = c("Total", "Point", "Line", "ND", "Attack", "Clash", "Other", "Not deadly", "Deadly"), # 
                                ordered = TRUE)) %>% 
       filter(variable == input$variable)
       })
@@ -63,12 +67,12 @@ server <- function(input, output) {
   output$plot <- renderPlotly({
     plot_ly(dataset()) %>% 
       add_trace(x = ~date, y = ~incidents, color =~category, type = "bar") %>% 
-#      add_trace(x = ~date, y = ~total, type = 'scatter', mode = 'lines', name = "") %>% 
       layout(title = "Number of incidents, per month",
              xaxis = list(title = "Date"), #, domain = c(0.075, 1)
              yaxis = list(title = "Incidents"),
              barmode = 'stack',
-             legend = list(x = 0.05, y = 0.925)) #orientation = 'h'
+             legend = list(x = 0.05, y = 0.925,
+                           bgcolor = "transparent")) #orientation = 'h'
     
     }
   )
