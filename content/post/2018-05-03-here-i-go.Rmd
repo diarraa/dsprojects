@@ -46,14 +46,14 @@ Between my first encounter with Stata and our break-up, I came to discover the j
 My heart keeps beating for Ubuntu, but for practicals reasons (working in a Windows-dominated environment), I have to postpone our reunion.
 We'll be together one day.
 One sweet day (a great song, by the way).
-I also enjoyed my time QGIS.
+I also enjoyed my time with QGIS.
 For some time, it made feel like a God, a God of Maps.
 But outside the projects where I needed maps, we didn't hang out very much (after all, that's all it can do).
 And also, I found it hard to navigate between different programs (Stata there, QGIS here, a database there,...).
 With time, the distance between us grew wider.
 One thing, though. 
 I'm to blame, partially.
-I didn't bother to master SQL to skip the middle man (in this case, Stata) to access directly my databases from QGIS.
+I didn't bother to master SQL to skip the middle man (in this case, Stata), to access directly my databases from QGIS.
 Anyway...water under the bridge.
 
 My relationships with those tools had their on-and-off moments (like Ross and Rachel).
@@ -65,7 +65,7 @@ And that is a practical reason that trumps all the other practical reasons.
 
 Back to R.
 Last year, I had a moment of...epiphany.
-Considering all the history I shared with Stata, the flings I had with Ubuntu and QGIS, and the better tomorrow I see in open-source (Ok, the *free* part plays a major role, I admit it), I decided to take a leap, to switch to R.
+Considering all the history I shared with Stata, the flings I had with Ubuntu and QGIS, and the better tomorrow I see in open-source (Ok, the *free* part played a major role, I admit it), I decided to take a leap, to switch to R.
 That meant rewriting countless lines of codes, scripts it's taken me years to write.
 But, most importantly, it meant learning a new language and understanding a new environment.
 I went online to get some tutorials.

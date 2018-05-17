@@ -5,8 +5,8 @@ account: fousseynoubah
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 344092
-bundleId: 1377275
+bundleId: 1377428
 url: https://fousseynoubah.shinyapps.io/ssm3/
-when: 1526492907.48169
+when: 1526499264.25886
 asMultiple: FALSE
 asStatic: FALSE

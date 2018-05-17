@@ -80,7 +80,7 @@ That's why I created a [GitHub repository](https://github.com/fousseynoubah/ssm)
 
 Second, the words.
 Few days in, I realized that the list was not limited to terrorist attacks.
-It included incidents of various nature, ranging from deadly assaults on civilians by terrorist organizations to clashes between communities or ethnic groups over land or livestock, to confrontations between military forces and armed movements, or between the latter themselves.
+It included incidents of various nature, ranging from deadly assaults on civilians by terrorist organizations to clashes between communities or ethnic groups over land or livestock, to confrontations between military forces and armed groups, or between the latter themselves.
 In the face of such a diversity, I had to find an expression that would be as neutral as possible, that would allow me to refer to the general without misrepresenting the particular.
 So, I settled for "incidents".
 
@@ -115,7 +115,7 @@ An event can make many victims, but a victim can only be associated with one eve
 
 In the first stage on the data transformation, I set out to create a large dataframe, where every relevant information on an event would be stored in a column.
 Later on, columns that refer to the same attribute would be transformed into a column of their own.
-That was mostly necessary for the information on the victims.
+That was mostly necessary for the victims.
 
 In the dataframe, I kept the original columns.
 
@@ -139,7 +139,7 @@ incidents %>%
 
 
 ### Space
-I added this group to enable the mapping of the events, and the computation of region-based statistics (regions, provinces, etc.).
+I added this group to enable the mapping of the events, and the computation of region-based statistics.
 I found on the website of United Nations Office for the Coordination of Humanitarian Affairs (OCHA) the two resources I needed for that:
 
 - the [shapefiles](https://data.humdata.org/dataset/administrative-boundaries-cod-mli) of the different administrative divisions;
@@ -214,7 +214,7 @@ incidents %>%
 ```
 
 The variables with the prefix "stat" give the status of the victims (civilian, soldier, etc.), and those with the prefix "count" indicate their number.
-I also added two control variables (binary variables: 1/0) to ensure that the sums of the parts (for example count_dead_1 + count_dead_2 + count_dead_3)  - are equal to the totals - nbr_dead.
+I also added two control variables (binary variables: 1/0) to ensure that the sums of the parts (for example count_dead_1 + count_dead_2 + count_dead_3) are equal to the overall counts (nbr_dead).
 
 ```{r, echo=FALSE}
 incidents %>%
@@ -240,7 +240,7 @@ victimes %>%
 ### Sources
 
 This category, the last, was not so much a part of the transformation as a provision for the future.
-I noticed that the list doe not include the sources.
+I noticed that the list does not include the sources.
 I believe their addition is important.
 It would send a strong signal as the reliability of the data provided in the list, and to some extent, it would make projects like this credible (well, I would like to say *more credible*).
 To that end, I added three columns to be filled with links to articles, videos, or podcasts that provide or confirm the information reported in the list.

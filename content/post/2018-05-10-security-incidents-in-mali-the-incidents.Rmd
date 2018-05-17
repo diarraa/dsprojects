@@ -106,13 +106,13 @@ But I knew one thing for sure.
 ggvis was not a viable an option.
 Unlike plotly or shiny, it was not being being maintained and developed.
 For all I know, it could be in its grave (I dread that fate so much that I shiver at the thought of it), or taking a long nap before a comeback (like a Mommy...well a good one...like those released in the early 2000's...not the one we recently got from Tom Cruise).
-I ended up spending long hours watching Youtube videos (which is now the place I go to learn rather than to find the latest music videos, like I used to few years ago...I miss the good old times) and surfing websites with tutorials on plotly and shiny in R.
+I ended up spending long hours watching Youtube videos (which is now the place I go to learn rather than to find the latest music videos, like back in the days...I miss the good old times) and surfing websites with tutorials on plotly and shiny in R.
 I still am not there yet, the place where I feel the confidence that only mastery can bring.
 But I understood few tricks.
 Mostly, I only set out *translate* my old ggplot2 graphs into interactive shiny-powered plotly ones.
 
 What I took away from the experience behind this post is this: there's no shortcut to learning, and nothing is truly ever lost (hum...that sounds profound... Ok, mark that, and write it on my grave when I'm gone).
-This project probably brought me closer to all the tools aforementioned than any previous tutorials I took online.
+This project helped me understand the tools aforementioned better than any previous tutorials I took online.
 Probably because I was less concerned with reproducing what I had in front of my eyes than I was trying to make sense of the data I had through visualization.
 
 This post was initially meant to be a simple rework of scripts I had previously written.
@@ -177,7 +177,7 @@ The result is shown below:
 
 ## Adding a spatial dimension
 
-Using the same variables, I added an interactive map to represent the yearly count for each in.
+Using the same variables, I added an interactive map to represent the yearly count for each of them.
 
 <iframe width="700" height="600" scrolling="no" frameborder="no"  src="https://fousseynoubah.shinyapps.io/ssm4/"> </iframe>
 
